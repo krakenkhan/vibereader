@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block title %} Reader {% endblock %} {% block
+main %}
+<div class="container" id="display">
+  <div>
+    <h2 class="shadow-lg p-3 mb-3 bg-body-tertiary mx-auto w-50 rounded">Click on the words you don't know</h2>
+    <div class="special">{{words}}</div>
+    <h2 id="start" type="button" onclick="display()" class="btn btn-primary">START</h2>
+  </div class='d-flex'>
+</div>
+<div class="vocab">
+  <form action="/vocab">
+    <button type="submit" id="button" class="btn btn-secondary">
+        Vocab Trainer
+    </button> 
+  </form>
+</div>
+<!-- Loading jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/script.js"></script>
+{% endblock %}

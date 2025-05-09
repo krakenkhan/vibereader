@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block title %} Vocab Trainer {% endblock %} {% block
+main %}
+
+<!-- A button that start showing the words by requesting to a new route. -->
+<button id="start" type="button" class="btn btn-primary">Start</button>
+<!-- Example using the word we need to guess. -->
+<div class="container-fluid overflow-hidden px-4 text-center gap-3 ">
+    <span id="example" class =" shadow-lg p-3 mb-5 bg-body-tertiary rounded"></span>
+</div> 
+
+ <div id="wordview" class="container-fluid overflow-hidden px-4 text-center gap-3">
+    <div class="row gx-5 mx-auto p-2"  style="height: 140px; width: 900px;">
+        <div id="word" class="col me-5 p-4 rounded-3">
+            <div id="ques" class="p-3 mx-auto fs-3">                
+                <!--Use JS to change the variable and display different words-->
+            </div>
+        </div >
+        <div id="trns" class="col p-4 rounded-3">
+            <div id="trans" class="p-3 mx-auto fs-3">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="question" class="fs-4 fw-bold text-center text-wrap mx-auto" style="width: 25rem;">
+    Guess the meaning and then click on the translation.
+</div>
+<div id="further" class="special">
+    <div class="btn">
+        <button id="3" class="btn btn-danger me-1" >
+            3. Not at all
+        </button>
+        <button id="2" class="btn btn-warning ms-1 me-1">
+            2.Almost
+        </button>
+        <button id="1" class="btn btn-success ms-1 me-1">
+            1.Yes
+        </button>
+    </div>
+    <br>
+    <div class="btn mt-4">
+        <button id="4" class="btn btn-info">
+            delete this word
+        </button>
+    </div>
+</div>
+
+<div>
+    <form action="/read" class="vocab">
+      <button type="submit" id="button" class="btn btn-warning">
+          Back to Reading
+      </button> 
+    </form>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="module" src="static/vocab.js"></script>
+{% endblock %}
