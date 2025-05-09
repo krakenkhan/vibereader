@@ -75,15 +75,12 @@ document.addEventListener("click", async event => {
                 word : targetWord,
                 trans: answer.innerText
               }
-              console.log(sentWord)
+              // console.log(sentWord)
               $.ajax({
                 url: 'http://127.0.0.1:5000/receive_data',  
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(sentWord),
-                success: function(suc) {
-                    console.log(suc);
-                },
                 error: function(error) {
                     console.error(error);
                 }

@@ -1,7 +1,9 @@
 from cs50 import SQL
+from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, request, session, jsonify , json
 from flask_session import Session
 from google import genai
+import os
 
 # Configure application
 app = Flask(__name__)
@@ -100,10 +102,12 @@ def alter():
 @app.route('/proompts',methods=['POST','GET'])
 def proompts():
     redata = request.json
-    client = genai.Client(api_key="AIzaSyAisVzPhcLqvfocy2LRSXznC5EzKC1ZadY")
+    load_dotenv()
+    key = os.getenv("API_KEY")
+    # print(api_key)
+    client = genai.Client(api_key=key)
     prompt = redata['prompt']
     word = redata['word']
-    print(word)
     response = client.models.generate_content(
         model="gemini-2.0-flash",
         contents= prompt + word
