@@ -28,7 +28,7 @@ def index():
 # Define route for the homepage
 @app.route("/read", methods = ["GET", "POST"])
 def hello():
-    WORDS = session['words']
+    WORDS = session.get('words',[])
     # Get the text input from the FORM
     if WORDS != "":
         # Render the read.html template   
