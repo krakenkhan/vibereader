@@ -2,7 +2,7 @@ from cs50 import SQL
 from dotenv import load_dotenv
 from flask import Flask, redirect, render_template, request, session, jsonify , json
 from flask_session import Session
-from google import genai
+from google import generativeai as genai
 import os
 
 # Configure application
