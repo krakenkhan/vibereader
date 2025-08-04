@@ -101,20 +101,28 @@ def alter():
 #a route that handle Prompts
 @app.route('/proompts',methods=['POST','GET'])
 def proompts():
-    redata = request.json
-    load_dotenv()
-    key = os.getenv("API_KEY")
-    # print(api_key)
-    client = genai.Client(api_key=key)
-    prompt = redata['prompt']
-    word = redata['word']
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents= prompt + word
-    )
-    # print(response.text)
-    return jsonify(response.text)
-    # return jsonify("great")
+    try:
+        redata = request.json
+        load_dotenv()
+        key = os.getenv("API_KEY")
+        # print(api_key)
+        genai.configure(api_key=key)
+        # client = genai.Client(api_key=key)
+        prompt = redata['prompt']
+        word = redata['word']
+        # response = client.models.generate_content(
+        #     model="gemini-2.0-flash",
+        #     contents= prompt + word
+        # )
+        model = genai.GenerativeModel(model_name="gemini-1.5-flash") 
+
+        response = model.generate_content(prompt + word)
+        # print(response.text)
+        return jsonify(response.text)
+        # return jsonify("great")
+    except Exception as e:
+        print("Error in /proompts:", str(e))
+        return jsonify({"error": str(e)}), 500
 
 
 # References
