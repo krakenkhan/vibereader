@@ -1,5 +1,6 @@
 # IMMERSIVE READER
 #### Video Demo:  [Demonstration](https://youtu.be/tdVWVoO41Gs)
+#### Hosted Link : [Here](https://vibereader.onrender.com)
 #### Description:
 This Project is a website that allows the user to paste text in a certain language and then read it while having the option to translate parts of it, which later can be learned through a vocab trainer included in the website. This project is inspired by a Browser Extention called [Readlang](https://readlang.com/de/dashboard).
 
