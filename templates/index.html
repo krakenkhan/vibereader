@@ -1,24 +1,44 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block title %} Reader {% endblock %} {% block
+main %}
+<form method="post" action="/" class="vocab">
+  <div class="text-center mb-4">
+    <h2
+      class="shadow p-3"
+      style="
+        background-color: #bebebe;
+        color: #2c3e50;
+        border-radius: 10px;
+        width: 50%;
+        margin: 0 auto;
+      "
+    >
+      Enter some text to translate it
+    </h2>
+  </div>
 
-{% block title %}
-    Reader
+  <div class="d-flex justify-content-center">
+    <textarea
+      name="text"
+      placeholder="Paste text here..."
+      cols="60"
+      rows="15"
+      class="form-control shadow-sm"
+      style="
+        resize: none;
+        font-size: 1rem;
+        background-color: #bebebe;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 75%;
+        color: #333;
+      "
+    ></textarea>
+  </div>
+
+  <div class="text-center mt-4">
+    <button type="submit" class="btn btn-primary shadow px-5 py-2 rounded-pill">
+      Read
+    </button>
+  </div>
+</form>
 {% endblock %}
-
-{% block main %}
-        <form  method="post" action="/" class="vocab">
-            <div>
-                <h2 class="shadow-lg p-3 mb-3 bg-body-tertiary mx-auto w-25 rounded">
-                    Enter Text
-                </h2>
-            </div>
-            <div>
-                
-                <textarea  name="text" placeholder="paste text here..." cols="60" rows="15" class="rounded-3 form-text"></textarea>
-            </br>
-                <button type="submit" class="shadow-lg container-fluid w-25 p-2 text-center mt-3 btn-primary rounded">Read</button>
-            
-        </form>
-    </div>
-{% endblock %}
-
-

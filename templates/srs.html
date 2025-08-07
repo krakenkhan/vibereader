@@ -1,58 +1,74 @@
-{% extends "layout.html" %} {% block title %} Vocab Trainer {% endblock %} {% block
-main %}
+{% extends "layout.html" %} {% block title %} Vocab Trainer {% endblock %} {%
+block main %}
 
-<!-- A button that start showing the words by requesting to a new route. -->
-<button id="start" type="button" class="btn btn-primary">Start</button>
-<!-- Example using the word we need to guess. -->
-<div class="container-fluid overflow-hidden px-4 text-center gap-3 ">
-    <span id="example" class =" shadow-lg p-3 mb-5 bg-body-tertiary rounded"></span>
-</div> 
-
- <div id="wordview" class="container-fluid overflow-hidden px-4 text-center gap-3">
-    <div class="row gx-5 mx-auto p-2"  style="height: 140px; width: 900px;">
-        <div id="word" class="col me-5 p-4 rounded-3">
-            <div id="ques" class="p-3 mx-auto fs-3">                
-                <!--Use JS to change the variable and display different words-->
-            </div>
-        </div >
-        <div id="trns" class="col p-4 rounded-3">
-            <div id="trans" class="p-3 mx-auto fs-3">
-                
-            </div>
-        </div>
-    </div>
+<!-- Start button -->
+<div class="text-center mb-4">
+  <button id="start" type="button" class="btn btn-primary btn-lg shadow">
+    Start
+  </button>
 </div>
 
-<div id="question" class="fs-4 fw-bold text-center text-wrap mx-auto" style="width: 25rem;">
-    Guess the meaning and then click on the translation.
-</div>
-<div id="further" class="special">
-    <div class="btn">
-        <button id="3" class="btn btn-danger me-1" >
-            3. Not at all
-        </button>
-        <button id="2" class="btn btn-warning ms-1 me-1">
-            2.Almost
-        </button>
-        <button id="1" class="btn btn-success ms-1 me-1">
-            1.Yes
-        </button>
-    </div>
-    <br>
-    <div class="btn mt-4">
-        <button id="4" class="btn btn-info">
-            delete this word
-        </button>
-    </div>
+<!-- Example word display -->
+<div class="container-fluid text-center mb-5">
+  <span
+    id="example"
+    class="d-inline-block shadow p-3 bg-secondary-subtle text-light rounded w-auto"
+  >
+    <!-- JS will populate this -->
+  </span>
 </div>
 
-<div>
-    <form action="/read" class="vocab">
-      <button type="submit" id="button" class="btn btn-warning">
-          Back to Reading
-      </button> 
-    </form>
+<!-- Word and translation section -->
+<div id="wordview" class="container-fluid text-center">
+  <div
+    class="row justify-content-center gx-5 p-3"
+    style="max-width: 900px; margin: auto"
+  >
+    <div id="word" class="col me-3 p-4 bg-dark border rounded-3 shadow-sm">
+      <div id="ques" class="fs-3 text-light">
+        <!-- JS injects word -->
+      </div>
+    </div>
+    <div id="trns" class="col p-4 bg-dark border rounded-3 shadow-sm">
+      <div id="trans" class="fs-3 text-info">
+        <!-- JS injects translation -->
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Question prompt -->
+<div
+  id="question"
+  class="fs-5 fw-semibold text-center my-4 text-light"
+  style="max-width: 25rem; margin: auto"
+>
+  Guess the meaning and then click on the translation.
+</div>
+
+<!-- Feedback buttons -->
+<div id="further" class="special text-center mt-3">
+  <div class="btn-group mb-3" role="group">
+    <button id="3" class="btn btn-danger">3. Not at all</button>
+    <button id="2" class="btn btn-warning">2. Almost</button>
+    <button id="1" class="btn btn-success">1. Yes</button>
+  </div>
+
+  <div class="mt-4">
+    <button id="4" class="btn btn-outline-info">Delete this word</button>
+  </div>
+</div>
+
+<!-- Back button -->
+<div class="text-center mt-5">
+  <form action="/read" class="vocab">
+    <button type="submit" id="button" class="btn btn-warning shadow">
+      Back to Reading
+    </button>
+  </form>
+</div>
+
+<!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="module" src="static/vocab.js"></script>
 {% endblock %}
