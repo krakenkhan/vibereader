@@ -19,7 +19,7 @@ function start_tool(wordsreceived) {
     var sedata = {
       word: words[current].word,
       prompt:
-        "For this given word at the end of this promot. display an example of the word used in a sentence in the respective language. output JUST the example and not a single extra word. Don't halucinate",
+        "For this given word after three ! marks at the end of this promot. display an example of the word used in a sentence in the respective language. output JUST the example and not a single extra word. Don't halucinate. !!!",
     };
     $.ajax({
       url: "https://vibereader.onrender.com/proompts",
