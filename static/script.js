@@ -58,7 +58,7 @@ document.addEventListener("click", async (event) => {
   var sdata = {
     word: `${targetWord}`,
     prompt:
-      "Translate the word attached to the end of this prompt in the language that this word most probably belongs too Output nothing but just the translation nothing else.",
+      "Translate the word attached to the end of this prompt into English Output nothing but just the translation nothing else.",
   };
   if (test == "clickableText") {
     if (answer.innerText == "") {

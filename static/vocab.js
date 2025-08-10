@@ -19,7 +19,7 @@ function start_tool(wordsreceived) {
     var sedata = {
       word: words[current].word,
       prompt:
-        "For this given word concatenated at the end of this promot. display an example in the language that this word most probably belongs to. output JUST the example and not a single extra word.",
+        "For this given word concatenated at the end of this promot. display an example of the word used in a sentence. output JUST the example and not a single extra word. Don't halucinate",
     };
     $.ajax({
       url: "https://vibereader.onrender.com/proompts",

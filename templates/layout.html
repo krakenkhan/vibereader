@@ -28,15 +28,57 @@
     <!-- Custom CSS -->
     <link href="/static/styles.css" rel="stylesheet" />
 
+    <style>
+      /* Force black background and white text for all body elements */
+      body {
+        background-color: #000 !important;
+        color: #fff !important;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      /* Navbar background black and text white */
+      .navbar {
+        background-color: #000 !important;
+      }
+
+      .navbar .navbar-brand,
+      .navbar .nav-link,
+      .navbar-toggler-icon {
+        color: #fff !important;
+      }
+
+      /* Navbar toggler icon color override */
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      /* Flash message alert: black background and white text */
+      .alert-info {
+        background-color: #000 !important;
+        color: #fff !important;
+        border: none !important;
+      }
+
+      /* Container main text centered with white text */
+      main.container {
+        color: #fff !important;
+      }
+
+      /* Remove bg-secondary from navbar so it doesn't override black */
+      .bg-secondary {
+        background-color: #000 !important;
+      }
+    </style>
+
     <title>{% block title %}{% endblock %}</title>
   </head>
 
-  <body class="bg-dark text-light">
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold fs-4" href="/">
-          <span class="white">Immersive Reader</span>
+          <span>Immersive Reader</span>
         </a>
         <button
           class="navbar-toggler"
@@ -58,7 +100,7 @@
     <!-- Flash Messages -->
     {% if get_flashed_messages() %}
     <header>
-      <div class="alert alert-info mb-0 text-center border-0 rounded-0">
+      <div class="alert alert-info mb-0 text-center rounded-0">
         {{ get_flashed_messages() | join(" ") }}
       </div>
     </header>

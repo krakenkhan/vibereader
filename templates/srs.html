@@ -3,7 +3,7 @@ block main %}
 
 <!-- Start button -->
 <div class="text-center mb-4">
-  <button id="start" type="button" class="btn btn-primary btn-lg shadow">
+  <button id="start" type="button" class="btn btn-outline-light btn-lg shadow">
     Start
   </button>
 </div>
@@ -12,7 +12,8 @@ block main %}
 <div class="container-fluid text-center mb-5">
   <span
     id="example"
-    class="d-inline-block shadow p-3 bg-secondary-subtle text-light rounded w-auto"
+    class="d-inline-block shadow p-3 rounded w-auto"
+    style="background-color: #000; color: #fff"
   >
     <!-- JS will populate this -->
   </span>
@@ -24,13 +25,19 @@ block main %}
     class="row justify-content-center gx-5 p-3"
     style="max-width: 900px; margin: auto"
   >
-    <div id="word" class="col me-3 p-4 bg-dark border rounded-3 shadow-sm">
-      <div id="ques" class="fs-3 text-light">
+    <div
+      id="word"
+      class="col me-3 p-4 bg-black border border-white rounded-3 shadow-sm"
+    >
+      <div id="ques" class="fs-3" style="color: #fff">
         <!-- JS injects word -->
       </div>
     </div>
-    <div id="trns" class="col p-4 bg-dark border rounded-3 shadow-sm">
-      <div id="trans" class="fs-3 text-info">
+    <div
+      id="trns"
+      class="col p-4 bg-black border border-white rounded-3 shadow-sm"
+    >
+      <div id="trans" class="fs-3" style="color: #fff">
         <!-- JS injects translation -->
       </div>
     </div>
@@ -40,8 +47,8 @@ block main %}
 <!-- Question prompt -->
 <div
   id="question"
-  class="fs-5 fw-semibold text-center my-4 text-light"
-  style="max-width: 25rem; margin: auto"
+  class="fs-5 fw-semibold text-center my-4"
+  style="max-width: 25rem; margin: auto; color: #fff"
 >
   Guess the meaning and then click on the translation.
 </div>
@@ -49,20 +56,38 @@ block main %}
 <!-- Feedback buttons -->
 <div id="further" class="special text-center mt-3">
   <div class="btn-group mb-3" role="group">
-    <button id="3" class="btn btn-danger">3. Not at all</button>
-    <button id="2" class="btn btn-warning">2. Almost</button>
-    <button id="1" class="btn btn-success">1. Yes</button>
+    <button
+      id="3"
+      class="btn btn-outline-danger"
+      style="color: #fff; border-color: #fff"
+    >
+      3. Not at all
+    </button>
+    <button
+      id="2"
+      class="btn btn-outline-secondary"
+      style="color: #fff; border-color: #fff"
+    >
+      2. Almost
+    </button>
+    <button
+      id="1"
+      class="btn btn-outline-success"
+      style="color: #fff; border-color: #fff"
+    >
+      1. Yes
+    </button>
   </div>
 
   <div class="mt-4">
-    <button id="4" class="btn btn-outline-info">Delete this word</button>
+    <button id="4" class="btn btn-outline-light">Delete this word</button>
   </div>
 </div>
 
 <!-- Back button -->
 <div class="text-center mt-5">
   <form action="/read" class="vocab">
-    <button type="submit" id="button" class="btn btn-warning shadow">
+    <button type="submit" id="button" class="btn btn-outline-light shadow">
       Back to Reading
     </button>
   </form>

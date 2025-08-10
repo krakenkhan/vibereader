@@ -3,18 +3,19 @@ main %}
 <div class="container py-4" id="display">
   <div class="text-center">
     <h2
-      class="shadow p-3 mb-4 bg-secondary-subtle text-light mx-auto w-75 rounded"
+      class="shadow p-3 mb-4 mx-auto w-75 rounded"
+      style="background-color: #000; color: #fff"
     >
       Click on the words you don't know
     </h2>
 
-    <div class="special">{{ words }}</div>
+    <div class="special" style="color: #fff">{{ words }}</div>
 
     <h2
       id="start"
       type="button"
       onclick="display()"
-      class="btn btn-primary btn-lg mt-3 shadow"
+      class="btn btn-outline-light btn-lg mt-3 shadow-sm"
     >
       START
     </h2>
@@ -26,7 +27,7 @@ main %}
     <button
       type="submit"
       id="button"
-      class="btn btn-outline-light px-4 py-2 rounded shadow-sm"
+      class="btn btn-outline-light px-4 py-2 shadow-sm"
     >
       Vocab Trainer
     </button>
@@ -36,4 +37,14 @@ main %}
 <!-- jQuery and Script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="static/script.js"></script>
+
+<!-- <style>
+  #start.btn-outline-light:hover,
+  #start.btn-outline-light:focus,
+  #start.btn-outline-light:active {
+    background-color: #bcbcbc !important;
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+</style> -->
 {% endblock %}
